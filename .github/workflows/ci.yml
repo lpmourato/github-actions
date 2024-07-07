@@ -5,7 +5,7 @@ name: Wheather API
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "development" ]
   pull_request:
     branches: [ "main" ]
 
@@ -29,8 +29,3 @@ jobs:
     
     - name: Build and push
       uses: docker/build-push-action@v6
-      with:
-        push: true
-        tags: nonusername/wheather
-        username: ${{ vars.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
