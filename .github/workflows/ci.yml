@@ -5,7 +5,6 @@ name: Wheather API
 
 on:
   push:
-    branches: [ "development" ]
     paths:
       - '.githib/workflows/**'
       - 'wheather/**'
