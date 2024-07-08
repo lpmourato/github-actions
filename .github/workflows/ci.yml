@@ -5,6 +5,7 @@ name: Wheather API
 
 on:
   push:
+    branches: [ "development" ]
     paths:
       - '.github/workflows/**'
       - 'wheather/**'
@@ -31,6 +32,7 @@ jobs:
     
   build_push_docker_img:
     runs-on: ubuntu-latest
+    needs: build_dotnet
     environment: DEV
     steps:    
     - name: Login to DockerHub
@@ -38,6 +40,9 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    
+    - name: Show current folder and list files
+      run: pwd && ls -l
 
     - name: Build and push
       uses: docker/build-push-action@v3
