@@ -7,7 +7,7 @@ on:
   push:
     branches: [ "development" ]
     paths:
-      - ./ci.yml
+      - ci.yml
       # - ../../wheather
       # - ../../Dockerfile
   pull_request:
