@@ -7,8 +7,8 @@ on:
   push:
     branches: [ "development" ]
     paths:
-      - ci.yml
-      - wheather/**
+      - '.githib/workflows/**'
+      - 'wheather/**'
       - Dockerfile
   pull_request:
     branches: [ "main" ]
