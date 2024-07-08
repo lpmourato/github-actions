@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: DEV
     steps:
-    - name: Show current folder and list files 2
-      run: pwd && ls -l    
+    - name: Show current folder and list files 1
+      run: pwd && ls -l ../
     - uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
