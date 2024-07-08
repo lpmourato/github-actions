@@ -10,9 +10,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_dotnet:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+          working-directory: ./wheather
     environment: DEV
 
     steps:
