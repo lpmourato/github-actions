@@ -13,6 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: DEV
 
     steps:
     - uses: actions/checkout@v4
@@ -29,3 +30,8 @@ jobs:
     
     - name: Build and push
       uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: nonusername/wheatherapi:latest
+        secrets: |
+          GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
