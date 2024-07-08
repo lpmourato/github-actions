@@ -6,7 +6,7 @@ name: Wheather API
 on:
   push:
     paths:
-      - '.githib/workflows/**'
+      - '.github/workflows/**'
       - 'wheather/**'
       - Dockerfile
   pull_request:
