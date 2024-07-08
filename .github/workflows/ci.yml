@@ -32,7 +32,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Show current folder and list files 2
-      run: pwd && ls -l
+      run: pwd && ls -l ../
     
   build_push_docker_img:
     runs-on: ubuntu-latest
