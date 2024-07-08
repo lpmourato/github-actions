@@ -8,8 +8,8 @@ on:
     branches: [ "development" ]
     paths:
       - ci.yml
-      # - ../../wheather
-      # - ../../Dockerfile
+      - wheather/**
+      - Dockerfile
   pull_request:
     branches: [ "main" ]
 
