@@ -6,18 +6,17 @@ name: Wheather API
 on:
   push:
     branches: [ "development" ]
+    paths:
+      - ./ci.yml
+      # - ../../wheather
+      # - ../../Dockerfile
   pull_request:
     branches: [ "main" ]
 
 jobs:
   build_dotnet:
-
     runs-on: ubuntu-latest
-    defaults:
-      run:
-          working-directory: ./wheather
     environment: DEV
-
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -31,7 +30,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     
-
+  build_push_docker_img:
+    runs-on: ubuntu-latest
+    environment: DEV
+    steps:    
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
